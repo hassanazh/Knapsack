@@ -1,0 +1,24 @@
+@startuml
+title
+    Knapsack Service
+end title
+    participant User
+    participant Admin
+
+    User -> KnapsackService: 1. Send API request
+
+    KnapsackService -> TaskService: 2. Send request for \n Task get, creation, update, delete requests.
+    TaskService --> KnapsackService: Send response according to request.
+
+    KnapsackService -> SolutionService: 3. Send request to get solution.
+
+    SolutionService -> KnapsackCalculation: 4. Send request to calculate solution \n based on task id.
+
+    KnapsackCalculation -> TaskService: 5. Get the problem based on task id.
+    TaskService --> KnapsackCalculation: Return the problem for the task.
+
+    SolutionService --> KnapsackService: Return list of indexes to consider according \n to the capacity.
+
+    Admin -> KnapsackService: 6. Send admin request
+    KnapsackService --> Admin: Perform admin operation and return response.
+@enduml

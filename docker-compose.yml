@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  rest:
+    build: .
+    ports:
+     - "8080:8080"
+    image: knapsack:rest-service
+    environment:
+     - LOG_LEVEL=trace
