@@ -5,9 +5,13 @@ or equal to a given limit and the total value is as large as possible. [Wikipedi
 
 ### Algorithm applied to calculate the solution
 The logic for this algorithm is:
+
 1. Calculate the ratio of value and weight
+
 2. Sort these ratios in descending order.
+
 3. Check the list and see how many weights from the sorted list can be accommodated within the capacity provided.
+
 4. Return indexes of the weights which were accommodated within the capacity.
 
 I am using ListBuffer to store the task and problem. This logic can be replaced with any persistent layer using database.
@@ -68,6 +72,7 @@ and password  (`password`) for admin tasks.
 This project is using Akka HTTP for REST API for asynchronous calls.
 
 Akka has number of benefits over other tools like Spray, Play etc [[1]](https://dzone.com/articles/akka-http-vs-other-rest-api-tools)
+
 * Akka HTTP has better default configurations, like thread pool size, for optimal performance.
 * Akka HTTP allows the database connection pool to expand and scale out more efficiently for better throughput.
 * Akka HTTP has very good documentation.
